@@ -11,7 +11,7 @@
       gtag('config', 'UA-121705879-1');
     </script>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title>Bigdesk</title>
+    <title>Bigdesk-basic_auth</title>
     <meta name="description" content="Live charts and statistics for ElasticSearch cluster, v2.4.0">
 
     <!-- css reset -->
@@ -28,7 +28,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/CssGrid_2/styles.css" />
 
     <!-- bigdesk styles -->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/bigdesk.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bigdesk_basic_auth.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="js/charts/common.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="js/charts/not-available/not-available-chart.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="js/charts/time-series/time-series-chart.css" />
@@ -77,7 +77,7 @@
     <script type="text/javascript" src="js/charts/bigdesk_charts.js"></script>
     <!-- application -->
     <script type="text/javascript" src="js/store/BigdeskStore.js"></script>
-    <script type="text/javascript" src="js/bigdeskApp.js"></script>
+    <script type="text/javascript" src="js/bigdeskApp_basic_auth.js"></script>
 
     <link rel="icon" href="images/favicon.png" type="image/png">
 </head>
@@ -87,10 +87,15 @@
     <form>
     <div class="row connectionPanel">
         <div class="sixcol">
-            <span class="connectionPanelSectionWithoutDecoration">
-                ES node REST endpoint
-                <input id="restEndPoint" type="text" size="40" value="http://localhost:9200" />
-            </span>
+              <div class="connectionPanelSectionWithoutDecoration panel">
+                   <label>ES node REST endpoint</label>
+                   <input id="restEndPoint" type="text" value="http://localhost:9200" />
+              </div>
+              <div class="basicAuthPanel panel">
+                   <label>Basic Auth Credentials</label>
+                   <input id="basicAuthUser" type="text" />
+                   <input id="basicAuthPass" type="password" />
+              </div>
         </div>
         <div class="sixcol last">
             <span class="connectionPanelSection">
@@ -122,7 +127,7 @@
             <span class="connectionPanelSectionWithoutDecoration">
                 <input id="connectButton" type="button" value="Connect"/>
             </span>
-            <input type="button" onclick="javascrtpt:window.location.href='basic_auth.html'" value="basicAuth" />
+            <input type="button" onclick="javascrtpt:window.location.href='index.html'" value="withoutAuth" />
             <span id="ajaxIndicator">&nbsp;&nbsp;&nbsp;</span>
         </div>
     </div>
